@@ -23,7 +23,7 @@ import static org.junit.jupiter.api.Assertions.*;
 public class BrightnessImgCharMatcherTest {
 
 	/* The path of the testSrc directory containing "ex4_tests", "output", "compare" and the images. */
-	private static final String TESTS_DIR = "testSrc/";
+	private static final String TESTS_DIR = "tests/testSrc/";
 
 	/* The font in use. this is the standard monospaced font in windows. */
 	private static final String FONT = "Courier New";
@@ -38,15 +38,12 @@ public class BrightnessImgCharMatcherTest {
 	private static final String LANDSCAPE = "landscape";
 
 	/* The characters in use. Each should produce a different brightness value. */
-	private static final Character[] charSet = {'@', 'y', 'n', 'o', '[', 'M', '%', 'B', ',', '`', '.', ' ',
-			'#', 'g', 'w',
-			'G', 'A', 'a', 'F', 'e', 'k', 'J', 'x', '*', 'i', '_', '"', 'W', 'E', 'D', 'm', 'f', 'c',
-			'j', '+', 'l', '-'};
+	private static final Character[] charSet = {'#', 'M', 'n', 'e', 'J', 'c', '_', 'W', '@', 'E', 'B', 'g',
+			'A', 'G', 'w', 'y', ',', '.', '`', ' ', 'i', 'o', '+', '*', '"'};
 
 	private static final String MESSAGE = "Line mismatch at the returned line index.";
 	public static final String ERROR = "The files couldn't be opened. check that the TEST_DIR is the " +
-			"correct" +
-			" relative path from the project directory or the correct absolute path to testSrc";
+			"correct relative path from the project directory or the correct absolute path to testSrc";
 
 
 	/**
