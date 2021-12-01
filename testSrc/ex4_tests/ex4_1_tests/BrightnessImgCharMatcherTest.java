@@ -87,12 +87,11 @@ public class BrightnessImgCharMatcherTest {
 
 	/* Call chooseChar and assert the comparison returned with no errors. */
 	private void checkResult(String image, int numCharsInRow) throws IOException {
-		assertEquals(0, Math.min(CompareOutputWithPicture(image, numCharsInRow, 1),
-				CompareOutputWithPicture(image, numCharsInRow, 2)), MESSAGE);
+		assertEquals(0, CompareOutputWithPicture(image, numCharsInRow), MESSAGE);
 	}
 
 	/* Runs chooseChar and checks that the output is identical to the compare file. */
-	private long CompareOutputWithPicture(String imageName, int numCharsInRow, int compareIndex) throws IOException {
+	private long CompareOutputWithPicture(String imageName, int numCharsInRow) throws IOException {
 		Image img = Image.fromFile(TESTS_DIR + imageName + JPEG);
 		BrightnessImgCharMatcher charMatcher = new BrightnessImgCharMatcher(img, FONT);
 		HtmlAsciiOutput asciiOutput =
@@ -100,7 +99,7 @@ public class BrightnessImgCharMatcherTest {
 		char[][] chars = charMatcher.chooseChars(numCharsInRow, charSet);
 		asciiOutput.output(chars);
 		return compareFilesByLine(
-				Paths.get(TESTS_DIR + compareIndex + COMPARE_DIR + imageName + numCharsInRow + HTML),
+				Paths.get(TESTS_DIR + COMPARE_DIR + imageName + numCharsInRow + HTML),
 				Paths.get(TESTS_DIR + OUTPUT_DIR + imageName + numCharsInRow + HTML)
 		);
 	}
