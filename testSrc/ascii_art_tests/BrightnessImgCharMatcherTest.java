@@ -75,7 +75,7 @@ public class BrightnessImgCharMatcherTest {
 		checkResult(MARIO, 64);
 		checkResult(MARIO, 128);
 		checkResult(MARIO, 256);
-		checkResult(MARIO, 563);
+		checkResult(MARIO, 512);
 	}
 
 	/**
@@ -89,7 +89,7 @@ public class BrightnessImgCharMatcherTest {
 		checkResult(LANDSCAPE, 512);
 		checkResult(LANDSCAPE, 1024);
 		checkResult(LANDSCAPE, 2048);
-		checkResult(LANDSCAPE, 2880);
+		checkResult(LANDSCAPE, 4096);
 	}
 
 	/* Call chooseChar and assert the comparison returned with no errors. */
