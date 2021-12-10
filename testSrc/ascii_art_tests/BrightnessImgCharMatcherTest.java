@@ -1,9 +1,12 @@
-package ex4_tests.ex4_1_tests;
+package ascii_art_tests;
 
 import ascii_art.img_to_char.BrightnessImgCharMatcher;
 import ascii_output.HtmlAsciiOutput;
 import image.Image;
+import org.junit.jupiter.api.MethodOrderer;
+import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestMethodOrder;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -20,25 +23,26 @@ import static org.junit.jupiter.api.Assertions.*;
  *
  * @author Erel Debel.
  */
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class BrightnessImgCharMatcherTest {
 
 	/* The path of the testSrc directory containing "ex4_tests", "output", "compare" and the images. */
-	private static final String TESTS_DIR = "testSrc/";
+	protected static final String TESTS_DIR = "testSrc/";
 
 	/* The font in use. this is the standard monospaced font in windows. */
-	private static final String FONT = "Courier New";
+	protected static final String FONT = "Courier New";
 
 	private static final String OUTPUT_DIR = "output/";
-	private static final String COMPARE_DIR = "compare/";
+	protected static final String COMPARE_DIR = "compare/";
 
-	private static final String JPEG = ".jpeg";
-	private static final String HTML = ".html";
+	protected static final String JPEG = ".jpeg";
+	protected static final String HTML = ".html";
 	private static final String MARIO = "mario";
 	private static final String BOARD = "board";
 	private static final String LANDSCAPE = "landscape";
 
 	/* The characters in use. Each should produce a different brightness value. */
-	private static final Character[] charSet = {'#', 'M', 'n', 'e', 'J', 'c', '_', 'W', '@', 'E', 'B', 'g',
+	protected static final Character[] charSet = {'#', 'M', 'n', 'e', 'J', 'c', '_', 'W', '@', 'E', 'B', 'g',
 			'A', 'G', 'w', 'y', ',', '.', '`', ' ', 'i', 'o', '+', '*', '"'};
 
 	private static final String MESSAGE = "Line mismatch at the returned line index.";
@@ -52,6 +56,7 @@ public class BrightnessImgCharMatcherTest {
 	 * @throws IOException If there was an error opening the files.
 	 */
 	@Test
+	@Order(1)
 	void chooseCharsSmallTest() throws IOException {
 		checkResult(BOARD, 4);
 		checkResult(BOARD, 16);
@@ -64,6 +69,7 @@ public class BrightnessImgCharMatcherTest {
 	 * @throws IOException If there was an error opening the files.
 	 */
 	@Test
+	@Order(2)
 	void chooseCharsMidTest() throws IOException {
 		checkResult(MARIO, 16);
 		checkResult(MARIO, 64);
@@ -78,6 +84,7 @@ public class BrightnessImgCharMatcherTest {
 	 * @throws IOException If there was an error opening the files.
 	 */
 	@Test
+	@Order(3)
 	void chooseCharsLargeTest() throws IOException {
 		checkResult(LANDSCAPE, 512);
 		checkResult(LANDSCAPE, 1024);
@@ -91,7 +98,7 @@ public class BrightnessImgCharMatcherTest {
 	}
 
 	/* Runs chooseChar and checks that the output is identical to the compare file. */
-	private long CompareOutputWithPicture(String imageName, int numCharsInRow) throws IOException {
+	protected long CompareOutputWithPicture(String imageName, int numCharsInRow) throws IOException {
 		Image img = Image.fromFile(TESTS_DIR + imageName + JPEG);
 		BrightnessImgCharMatcher charMatcher = new BrightnessImgCharMatcher(img, FONT);
 		HtmlAsciiOutput asciiOutput =
@@ -106,7 +113,7 @@ public class BrightnessImgCharMatcherTest {
 
 	/* Compares 2 text files. if they are identical returns 0, else returns the index of the first different
 	   line. */
-	private static long compareFilesByLine(Path comparePath, Path outputPath) throws IOException {
+	protected static long compareFilesByLine(Path comparePath, Path outputPath) throws IOException {
 		try (
 				BufferedReader compareReader = Files.newBufferedReader(comparePath);
 				BufferedReader outputReader = Files.newBufferedReader(outputPath)
