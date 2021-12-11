@@ -1,10 +1,13 @@
+package ex4_tests.ex4_2_tests;
+
+import ascii_art.Algorithms;
 import org.junit.jupiter.api.Test;
 
 
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
- * <B>Tests for the Algorithms section,</B>
+ * <B>Tests for the ascii_art.Algorithms section,</B>
  * featured in Exercise 4 part 2 of the new "Introduction to OOP" course,
  * HUJI, Winter 2021-2022 Semester.
  * <p>

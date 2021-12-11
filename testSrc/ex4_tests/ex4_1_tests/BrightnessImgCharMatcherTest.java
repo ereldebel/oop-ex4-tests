@@ -1,4 +1,4 @@
-package ascii_art_tests;
+package ex4_tests.ex4_1_tests;
 
 import ascii_art.img_to_char.BrightnessImgCharMatcher;
 import ascii_output.HtmlAsciiOutput;
@@ -34,6 +34,7 @@ public class BrightnessImgCharMatcherTest {
 
 	private static final String OUTPUT_DIR = "output/";
 	protected static final String COMPARE_DIR = "compare/";
+	private static final String IMAGES_DIR = "images/";
 
 	protected static final String JPEG = ".jpeg";
 	protected static final String HTML = ".html";
@@ -45,8 +46,9 @@ public class BrightnessImgCharMatcherTest {
 	protected static final Character[] charSet = {'#', 'M', 'n', 'e', 'J', 'c', '_', 'W', '@', 'E', 'B', 'g',
 			'A', 'G', 'w', 'y', ',', '.', '`', ' ', 'i', 'o', '+', '*', '"'};
 
-	private static final String MESSAGE = "Line mismatch at the returned line index.";
-	public static final String ERROR = "The files couldn't be opened. check that the TEST_DIR is the " +
+	private static final String MESSAGE = "Line mismatch between your output (in the output directory) and " +
+			"the reference (in the 'compare' directory) at the returned line index.";
+	private static final String ERROR = "The files couldn't be opened. check that the TEST_DIR is the " +
 			"correct relative path from the project directory or the correct absolute path to testSrc";
 
 
@@ -99,7 +101,7 @@ public class BrightnessImgCharMatcherTest {
 
 	/* Runs chooseChar and checks that the output is identical to the compare file. */
 	protected long CompareOutputWithPicture(String imageName, int numCharsInRow) throws IOException {
-		Image img = Image.fromFile(TESTS_DIR + imageName + JPEG);
+		Image img = Image.fromFile(TESTS_DIR + IMAGES_DIR + imageName + JPEG);
 		BrightnessImgCharMatcher charMatcher = new BrightnessImgCharMatcher(img, FONT);
 		HtmlAsciiOutput asciiOutput =
 				new HtmlAsciiOutput(TESTS_DIR + OUTPUT_DIR + imageName + numCharsInRow + HTML, FONT);
