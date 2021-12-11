@@ -79,6 +79,17 @@ class AlgorithmsTest {
 	}
 
 	@Test
+	void findDuplicateCase13Test() {
+		assertEquals(1, Algorithms.findDuplicate(new int[]{1, 1, 2, 3}));
+	}
+
+	@Test
+	void findDuplicateCase14Test() {
+		assertEquals(2, Algorithms.findDuplicate(new int[]{1, 3, 4, 2, 2}));
+	}
+
+
+	@Test
 	void UniqueMorseRepresentations1Test() {
 		assertEquals(1, Algorithms.uniqueMorseRepresentations(new String[]{"p", "an"}));
 	}
