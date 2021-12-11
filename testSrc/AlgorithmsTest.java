@@ -7,9 +7,12 @@ import static org.junit.jupiter.api.Assertions.*;
  * <B>Tests for the Algorithms section,</B>
  * featured in Exercise 4 part 2 of the new "Introduction to OOP" course,
  * HUJI, Winter 2021-2022 Semester.
- *
- * Special thanks to Michal Iviansky for pointing me to this website the unique morse representations tests:
- * <a href="https://datagenetics.com/blog/march42012/results.html">https://datagenetics.com/blog/march42012/results.html</a>
+ * <p>
+ * Special thanks to Michal Iviansky for pointing me to this website for the unique morse representations
+ * tests:
+ * <a href="https://datagenetics.com/blog/march42012/results.html">
+ * https://datagenetics.com/blog/march42012/results.html
+ * </a>
  *
  * @author Erel Debel.
  */
@@ -62,7 +65,7 @@ class AlgorithmsTest {
 
 	@Test
 	void findDuplicateCase10Test() {
-		assertEquals(1, Algorithms.findDuplicate(new int[]{4, 2, 3, 6, 7, 5, 4, 1}));
+		assertEquals(4, Algorithms.findDuplicate(new int[]{4, 2, 3, 6, 7, 5, 4, 1}));
 	}
 
 	@Test
