@@ -27,7 +27,7 @@ import static org.junit.jupiter.api.Assertions.*;
 public class BrightnessImgCharMatcherTest {
 
 	/* The path of the testSrc directory containing "ex4_tests", "output", "compare" and the images. */
-	protected static final String TESTS_DIR = "testSrc/";
+	protected static final String TESTS_DIR = "tests/testSrc/";
 
 	/* The font in use. this is the standard monospaced font in windows. */
 	protected static final String FONT = "Courier New";
@@ -96,6 +96,7 @@ public class BrightnessImgCharMatcherTest {
 
 	/* Call chooseChar and assert the comparison returned with no errors. */
 	private void checkResult(String image, int numCharsInRow) throws IOException {
+		assertEquals(0, CompareOutputWithPicture(image, numCharsInRow), MESSAGE);
 		assertEquals(0, CompareOutputWithPicture(image, numCharsInRow), MESSAGE);
 	}
 
