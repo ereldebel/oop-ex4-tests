@@ -27,7 +27,7 @@ import static org.junit.jupiter.api.Assertions.*;
 public class BrightnessImgCharMatcherTest {
 
 	/* The path of the testSrc directory containing "ex4_tests", "output", "compare" and the images. */
-	protected static final String TESTS_DIR = "tests/testSrc/";
+	protected static final String TESTS_DIR = "testSrc/";
 
 	/* The font in use. this is the standard monospaced font in windows. */
 	protected static final String FONT = "Courier New";
