@@ -20,6 +20,12 @@ import static org.junit.jupiter.api.Assertions.*;
  * @author Erel Debel.
  */
 class AlgorithmsTest {
+
+	@Test
+	void findDuplicateCase0Test() {
+		assertEquals(2, Algorithms.findDuplicate(new int[]{2, 3, 2, 2}));
+	}
+
 	@Test
 	void findDuplicateCase1Test() {
 		assertEquals(2, Algorithms.findDuplicate(new int[]{1, 2, 2}));
